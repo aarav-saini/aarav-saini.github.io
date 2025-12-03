@@ -319,7 +319,6 @@ document.querySelectorAll(".obfuscate").forEach((element) => {
         startScrambling();
     });
 
-    // Initial scramble
     startScrambling();
 });
 const spiralGalaxy = document.getElementById("spiral-galaxy");

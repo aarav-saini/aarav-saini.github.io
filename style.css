@@ -192,3 +192,44 @@ body {
     cursor: pointer;
     z-index: 1000;
 }
+
+.work-card {
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 400px;
+    margin: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.work-link {
+    background-color: rgb(45, 45, 45);
+    padding: 7px;
+    color: white;
+    margin-top: 5px;
+    border-radius: 8px;
+    max-width: calc(15% + 30px);
+    text-align: center;
+    text-decoration: none;
+}
+
+.work-img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.new-tab-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    vertical-align: middle;
+    stroke: #fff;
+    transition: transform 0.2s ease;
+}
+
+.work-link:hover .new-tab-icon {
+    transform: translateY(-2px);
+}
