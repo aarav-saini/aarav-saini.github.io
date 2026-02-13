@@ -1,6 +1,6 @@
 async function loadQuote() {
   try {
-    const res = await fetch("media/quotes.json");
+    const res = await fetch("./media/quotes.json");
     const data = await res.json();
     const random = data[Math.floor(Math.random() * data.length)];
     document.getElementById("quote").textContent = random.quote;
