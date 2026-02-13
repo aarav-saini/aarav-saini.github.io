@@ -12,11 +12,11 @@ body {
 }
 @font-face {
   font-family: Inter;
-  src: url(media/fonts/Inter.ttf);
+  src: url(/media/fonts/Inter.ttf);
 }
 @font-face {
   font-family: audiowide;
-  src: url(media/fonts/Audiowide-Regular.ttf);
+  src: url(/media/fonts/Audiowide-Regular.ttf);
 }
 @font-face {
   font-family: pirataone;
