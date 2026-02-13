@@ -2,142 +2,110 @@ html {
   height: 100%;
   overflow-x: hidden;
 }
-
 body {
   height: 100%;
   margin: 0;
   padding: 0;
   color: white;
-  font-family: system-ui, sans-serif;
+  font-family: "Inter";
   background: #000000;
 }
-
+@font-face {
+  font-family: Inter;
+  src: url(/media/fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
 @font-face {
   font-family: audiowide;
-  src: url(media/fonts/Audiowide-Regular.ttf);
+  src: url(/media/fonts/Audiowide-Regular.ttf);
 }
 @font-face {
   font-family: pirataone;
-  src: url(media/fonts/PirataOne-Regular.ttf);
+  src: url(/media/fonts/PirataOne-Regular.ttf);
 }
 @font-face {
   font-family: ultra;
-  src: url(media/fonts/Ultra-Regular.ttf);
+  src: url(/media/fonts/Ultra-Regular.ttf);
 }
 @font-face {
   font-family: amarante;
-  src: url(media/fonts/Amarante-Regular.ttf);
+  src: url(/media/fonts/Amarante-Regular.ttf);
 }
 @font-face {
   font-family: lanord;
-  src: url(media/fonts/LaNord-Bold.woff2);
+  src: url(/media/fonts/LaNord-Bold.woff2);
 }
-
-/* ==============================
-   ENABLE
-============================== */
 @view-transition {
   navigation: auto;
 }
-
-/* ==============================
-   GLOBAL TIMING
-============================== */
 ::view-transition-group(root) {
   animation-duration: 0.9s;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   transform-style: preserve-3d;
 }
-
-/* ==============================
-   OLD PAGE
-============================== */
 ::view-transition-old(root) {
   animation-name: vt-out;
   z-index: 1;
 }
-
-/* ==============================
-   NEW PAGE
-============================== */
 ::view-transition-new(root) {
   animation-name: vt-in;
   z-index: 2;
 }
-
-/* ==============================
-   KEYFRAMES
-============================== */
-
-/* page leaving → drift away */
 @keyframes vt-out {
   0% {
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0);
   }
-
   40% {
     opacity: 0.7;
   }
-
   100% {
     opacity: 0;
     transform: translateY(-6vh) scale(0.94);
     filter: blur(10px);
   }
 }
-
-/* page entering → come from depth */
 @keyframes vt-in {
   0% {
     opacity: 0;
     transform: translateY(8vh) scale(0.96);
     filter: blur(10px);
   }
-
   60% {
     opacity: 1;
     filter: blur(0);
   }
-
   100% {
     transform: translateY(0) scale(1);
   }
 }
-
-/* ==============================
-   REDUCED MOTION
-============================== */
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*) {
     animation: none !important;
   }
 }
-
 .t {
   font-family: lanord, system-ui, sans-serif;
   font-size: calc(28px + 5vw);
   font-weight: 700;
 }
-
 .header {
-  height: 40vw;
+  height: 50vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 h1 {
   font-weight: 100;
 }
-
+.header > h1 {
+  font-family: lanord;
+}
 #filters {
   position: absolute;
   width: 0;
   height: 0;
 }
-
 .navbar {
   z-index: 999;
   min-height: 5vh;
@@ -149,7 +117,6 @@ h1 {
   justify-content: center;
   pointer-events: none;
 }
-
 .navbarInner {
   pointer-events: auto;
   width: 80%;
@@ -170,19 +137,16 @@ h1 {
   opacity: 1;
   gap: 15px;
 }
-
 .navSide {
   display: flex;
   gap: 1rem;
 }
-
 .navCenter {
   font-family: lanord, system-ui, sans-serif;
   font-size: clamp(16px, 2vw, 22px);
   pointer-events: none;
 }
-
-a {
+.navSide a {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding: 0.4em 1em;
@@ -192,8 +156,7 @@ a {
     transform 0.3s ease,
     background 0.3s ease;
 }
-
-a:hover {
+.navSide a:hover {
   transform: scale(1.08);
   background: rgba(255, 255, 255, 0.15);
 }

@@ -6,7 +6,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(/media/aboutbg.png);
+  background-image: url(/media/contactbg.png);
   background-size: 150%;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px) saturate(140%) brightness(50%);
+  backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
@@ -33,26 +33,12 @@
   padding: 3vh;
   color: white;
 }
-.skillset {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50vw;
-  gap: 3vh;
-}
-.skillcard {
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 10px;
-}
-.skillcard > img {
-  height: 100%;
+.discordurl {
+  text-decoration: none;
+  color: dodgerblue;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: white;
+  font-weight: 400;
+  font-family: Inter;
 }
