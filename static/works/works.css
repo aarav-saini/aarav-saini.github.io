@@ -1,0 +1,12 @@
+.header {
+    background-image: url(/media/worksbg.png);
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content {
+    font-size: 1vh;
+    font-weight: 100;
+    padding: 3vh;
+}

@@ -1,0 +1,116 @@
+/* ==============================
+   FONTS
+============================== */
+@font-face {
+  font-family: audiowide;
+  src: url(/media/fonts/Audiowide-Regular.ttf);
+}
+@font-face {
+  font-family: pirataone;
+  src: url(/media/fonts/PirataOne-Regular.ttf);
+}
+@font-face {
+  font-family: ultra;
+  src: url(/media/fonts/Ultra-Regular.ttf);
+}
+@font-face {
+  font-family: amarante;
+  src: url(/media/fonts/Amarante-Regular.ttf);
+}
+@font-face {
+  font-family: lanord;
+  src: url(/media/fonts/LaNord-Bold.woff2);
+}
+
+/* ==============================
+   INTRO
+============================== */
+
+.intro {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b0e14;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.quote {
+  font-size: clamp(28px, 4vw, 64px);
+  font-weight: 700;
+  text-align: center;
+  padding: 15px;
+  white-space: normal;
+}
+
+#author {
+  font-size: clamp(18px, 2vw, 32px);
+  opacity: 0;
+  margin-top: 10px;
+  color: #d0d0d0;
+}
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#heroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+#nameTitle {
+  font-size: clamp(40px, 10vw, 140px);
+  position: absolute;
+  text-align: center;
+  font-family: lanord, system-ui, sans-serif;
+}
+
+/* ==============================
+   SVG FILTER ROOT
+============================== */
+
+#filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+
+/* ==============================
+   LOCK DURING INTRO
+============================== */
+
+html.is-locked,
+body.is-locked {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* ==============================
+   GENERIC TITLE
+============================== */
+
+.t {
+  font-family: lanord, system-ui, sans-serif;
+  font-size: calc(28px + 8vw);
+}

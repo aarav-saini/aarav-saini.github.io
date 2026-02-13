@@ -1,91 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Aarav Saini</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="startup">
-            <button id="startupskip" onclick="skipStartup();">>></button>
-            <div id="startuptext"></div>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Aarav Saini</title>
+    <link rel="stylesheet" href="/static/index/index.css" />
+    <link rel="stylesheet" href="/static/shared.css" />
+    <script src="/static/shared.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbarInner">
+        <div class="navSide navLeft">
+          <a href="/?skipIntro=true">Home</a>
+          <a href="/about">About</a>
         </div>
-        <div class="started">
-            <div class="hero">
-                <div class="content">
-                    <h1 class="t" id="herotitle">Aarav Saini</h1>
-                </div>
-                <div class="bg">
-                    <div id="spiral-galaxy" class="circle-container"></div>
-                </div>
-            </div>
-            <section class="main container">
-                <h2>> About Me</h2>
-                <p>
-                    Hey! Welcome to my... what is it? A portfolio website, I
-                    guess. I'm Aarav Saini/GalacticNuclei, a
-                    <span id="age"></span> year old frontend, backend (and more)
-                    developer. I guess that's called a full stack developer? But
-                    I don't feel like I'm a full stack developer, lol.<br />
-                    <br />
-                    <br />
-                    > <b>Stack</b><br />
-                    My current stack is:
-                </p>
 
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript (Vanilla)</li>
-                    <li>Node.js</li>
-                    <li>React.js</li>
-                    <li>Discord bot development</li>
-                    <li>Java (Minecraft plugin development)</li>
-                    <li>Minecraft Datapack development</li>
-                    <li>LUA (Roblox Scripting)</li>
-                </ul>
-                <br />
-                <br />
-                > <b>Contact</b><br />
-                I'm not gonna give you my mail, because I don't even check it
-                (lol). But here's my Discord:
-                <span class="obfuscate"><b>galacticnuclei</b></span> [hover over
-                it, or tap if you're on a mobile device.]
-                <br /><br /><br /><br />
-                <h2>> Works</h2>
-                <div class="work-card">
-                    <img
-                        class="work-img"
-                        src="media/oxygenated.png"
-                        alt="Oxygenated Logo" />
-                    <h3 class="work-title">Oxygenated</h3>
-                    <p class="work-desc">
-                        A minecraft plugin to make your server easy to manage.
-                    </p>
-                    <a
-                        class="work-link"
-                        href="https://github.com/aarav-saini/Oxygenated"
-                        target="_blank">
-                        Github
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="new-tab-icon">
-                            <path
-                                d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                        </svg>
-                    </a>
-                </div>
-            </section>
+        <div class="navCenter" id="navTitle"></div>
+
+        <div class="navSide navRight">
+          <a href="/works">Works</a>
+          <a href="#contact">Contact</a>
         </div>
-        <script src="script.js"></script>
-    </body>
+      </div>
+    </div>
+
+    <svg id="filters">
+      <defs>
+        <filter id="noise">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.9"
+            numOctaves="4"
+            stitchTiles="stitch"
+          />
+        </filter>
+        <filter id="threshold">
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0
+									0 1 0 0 0
+									0 0 1 0 0
+									0 0 0 255 -140"
+          />
+        </filter>
+        <filter id="glitch">
+          <feTurbulence baseFrequency="0.8" numOctaves="1" result="t" />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="t"
+            scale="10"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+        <filter
+          id="glass"
+          x="-50%"
+          y="-50%"
+          width="200%"
+          height="200%"
+          primitiveUnits="objectBoundingBox"
+        >
+          <feImage x="-50%" y="-50%" width="200%" height="200%" result="map" />
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="0.02"
+            result="blur"
+          />
+          <feDisplacementMap
+            id="disp"
+            in="blur"
+            in2="map"
+            scale="0.8"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          ></feDisplacementMap>
+        </filter>
+      </defs>
+    </svg>
+    <div class="intro">
+      <div style="text-align: center">
+        <h1 id="quote" class="quote">Quote</h1>
+        <div id="author">— Author</div>
+      </div>
+    </div>
+    <div class="hero" id="home">
+      <video autoplay muted loop playsinline id="heroVideo">
+        <source src="media/taotajima.mp4" type="video/mp4" />
+      </video>
+      <h1 class="t" id="nameTitle">Aarav Saini</h1>
+    </div>
+    <script src="/static/index/index.js"></script>
+  </body>
 </html>

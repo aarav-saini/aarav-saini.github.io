@@ -1,0 +1,32 @@
+.header {
+    background-image: url(/media/aboutbg.png);
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content {
+    font-size: 1vh;
+    font-weight: 100;
+    padding: 3vh;
+}
+
+.skillset {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vw;
+    gap: 3vh
+}
+
+.skillcard {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skillcard > img {
+    height: 100%;
+}
