@@ -100,7 +100,7 @@ async function initIntro() {
 }
 const feImage = document.querySelector("feImage");
 if (feImage) {
-  fetch("https:
+  fetch("https://essykings.github.io/JavaScript/map.png")
     .then((res) => res.blob())
     .then((blob) => {
       const url = URL.createObjectURL(blob);
