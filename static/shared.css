@@ -12,27 +12,27 @@ body {
 }
 @font-face {
   font-family: Inter;
-  src: url(./media/fonts/Inter-VariableFont_opsz\,wght.ttf);
+  src: url(media/fonts/Inter-VariableFont_opsz,wght.ttf);
 }
 @font-face {
   font-family: audiowide;
-  src: url(./media/fonts/Audiowide-Regular.ttf);
+  src: url(media/fonts/Audiowide-Regular.ttf);
 }
 @font-face {
   font-family: pirataone;
-  src: url(./media/fonts/PirataOne-Regular.ttf);
+  src: url(/media/fonts/PirataOne-Regular.ttf);
 }
 @font-face {
   font-family: ultra;
-  src: url(./media/fonts/Ultra-Regular.ttf);
+  src: url(/media/fonts/Ultra-Regular.ttf);
 }
 @font-face {
   font-family: amarante;
-  src: url(./media/fonts/Amarante-Regular.ttf);
+  src: url(/media/fonts/Amarante-Regular.ttf);
 }
 @font-face {
   font-family: lanord;
-  src: url(./media/fonts/LaNord-Bold.woff2);
+  src: url(/media/fonts/LaNord-Bold.woff2);
 }
 @view-transition {
   navigation: auto;

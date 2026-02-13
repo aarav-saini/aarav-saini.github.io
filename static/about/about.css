@@ -6,7 +6,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(./media/aboutbg.png);
+  background-image: url(/media/aboutbg.png);
   background-size: 150%;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@
   z-index: 1;
 }
 .content {
-  font-size: clamp(14px, 1.2vw, 18px); 
+  font-size: clamp(14px, 1.2vw, 18px);
   font-weight: 300;
   padding: 3vh;
   color: white;
