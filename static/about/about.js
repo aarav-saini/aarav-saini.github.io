@@ -1,4 +1,4 @@
-const lenis = new Lenis({
+window.lenis = new Lenis({
   smoothWheel: true,
   smoothTouch: false,
 });

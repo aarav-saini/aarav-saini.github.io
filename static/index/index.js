@@ -50,25 +50,25 @@ const skipIntro = params.get("skipIntro") === "true";
 async function initIntro() {
   const intro = document.querySelector(".intro");
   const hero = document.querySelector(".hero");
+
   if (skipIntro) {
-    intro.style.display = "none";
-    hero.style.display = "flex";
-    nameTitle.style.fontFamily = finalFont;
-    fontAnimationComplete = true;
-    gsap.set("#nameTitle", { y: "40vh" });
-    ScrollTrigger.refresh();
+    revealHeroInstant();
     return;
   }
+
   hero.style.display = "none";
+
   gsap.to(["#quote", "#author"], {
     opacity: 1,
     duration: 0.8,
   });
+
   gsap.to(["#quote", "#author"], {
     opacity: 0,
     duration: 1,
     delay: 1.8,
   });
+
   gsap.to(intro, {
     opacity: 0,
     duration: 1,
@@ -76,21 +76,42 @@ async function initIntro() {
     onComplete() {
       intro.style.display = "none";
       hero.style.display = "flex";
+
       startTime = Date.now();
       changeFont();
+
       const waitFont = setInterval(() => {
         if (!fontAnimationComplete) return;
         clearInterval(waitFont);
+
         gsap.fromTo(
           "#nameTitle",
           { y: 0 },
           {
-            y: "40vh",
+            y: "-3vh",
+            scale: 1.3,
             duration: 4,
             ease: "expo.out",
             force3D: true,
             onComplete() {
               ScrollTrigger.refresh();
+
+              const tl = gsap.timeline();
+
+              tl.to(".navbarInner", {
+                scaleX: 1,
+                duration: 1.2,
+                ease: "expo.inOut",
+              }).to(
+                ".navSide a",
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.5,
+                  stagger: 0.06,
+                },
+                "-=0.4",
+              );
             },
           },
         );
@@ -98,6 +119,7 @@ async function initIntro() {
     },
   });
 }
+
 const feImage = document.querySelector("feImage");
 if (feImage) {
   fetch("https://essykings.github.io/JavaScript/map.png")
@@ -107,23 +129,12 @@ if (feImage) {
       feImage.setAttribute("href", url);
     });
 }
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute("href"));
-    if (!target) return;
-    lenis.scrollTo(target, {
-      duration: 1.2,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-    });
-  });
-});
 loadQuote().then(() => {
   initIntro();
   const container = document.querySelector(".container");
   gsap.set(container, { visibility: "visible" });
 });
-const lenis = new Lenis({
+window.lenis = new Lenis({
   smoothWheel: true,
   smoothTouch: false,
 });
@@ -151,3 +162,21 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 ScrollTrigger.addEventListener("refresh", () => lenis.resize());
 ScrollTrigger.refresh();
+
+function revealHeroInstant() {
+  const intro = document.querySelector(".intro");
+  const hero = document.querySelector(".hero");
+
+  intro.style.display = "none";
+  hero.style.display = "flex";
+
+  fontAnimationComplete = true;
+  nameTitle.style.fontFamily = finalFont;
+
+  gsap.set("#nameTitle", { y: "-3vh", scale: 1.3 });
+
+  gsap.set(".navbarInner", { scaleX: 1 });
+  gsap.set(".navSide a", { opacity: 1, y: 0 });
+
+  ScrollTrigger.refresh();
+}
