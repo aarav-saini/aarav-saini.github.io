@@ -1,3 +1,5 @@
+const isMobile = window.matchMedia("(max-width: 900px)").matches;
+
 window.lenis = new Lenis({
   smoothWheel: true,
   smoothTouch: false,
@@ -28,16 +30,20 @@ ScrollTrigger.addEventListener("refresh", () => lenis.resize());
 ScrollTrigger.refresh();
 const marquee = document.querySelector(".marquee");
 const track = document.querySelector(".marqueeTrack");
-track.innerHTML += track.innerHTML;
-const half = track.scrollWidth / 2;
-const marqueeTween = gsap.to(track, {
-  x: -half,
-  ease: "none",
-  duration: 25,
-  repeat: -1,
-});
-marquee.addEventListener("mouseenter", () => marqueeTween.pause());
-marquee.addEventListener("mouseleave", () => marqueeTween.resume());
+if (!isMobile) {
+  track.innerHTML += track.innerHTML;
+  const half = track.scrollWidth / 2;
+
+  var marqueeTween = gsap.to(track, {
+    x: -half,
+    ease: "none",
+    duration: 25,
+    repeat: -1,
+  });
+
+  marquee.addEventListener("mouseenter", () => marqueeTween.pause());
+  marquee.addEventListener("mouseleave", () => marqueeTween.resume());
+}
 const modal = document.createElement("div");
 modal.className = "workModal";
 modal.innerHTML = `

@@ -1,11 +1,7 @@
-/* =========================
-   GLOBAL
-   ========================= */
 html {
   height: 100%;
   overflow-x: hidden;
 }
-
 body {
   height: 100%;
   margin: 0;
@@ -14,11 +10,9 @@ body {
   font-family: "Inter";
   background: #000000;
 }
-
 * {
   box-sizing: border-box;
 }
-
 @font-face {
   font-family: Inter;
   src: url(/media/fonts/Inter.ttf);
@@ -43,30 +37,22 @@ body {
   font-family: lanord;
   src: url(/media/fonts/LaNord-Bold.woff2);
 }
-
-/* =========================
-   VIEW TRANSITIONS
-   ========================= */
 @view-transition {
   navigation: auto;
 }
-
 ::view-transition-group(root) {
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   transform-style: preserve-3d;
 }
-
 ::view-transition-old(root) {
   animation-name: vt-out;
   z-index: 1;
 }
-
 ::view-transition-new(root) {
   animation-name: vt-in;
   z-index: 2;
 }
-
 @keyframes vt-out {
   0% {
     opacity: 1;
@@ -82,7 +68,6 @@ body {
     filter: blur(10px);
   }
 }
-
 @keyframes vt-in {
   0% {
     opacity: 0;
@@ -97,52 +82,33 @@ body {
     transform: translateY(0) scale(1);
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*) {
     animation: none !important;
   }
 }
-
-/* =========================
-   TYPOGRAPHY
-   ========================= */
 .t {
   font-family: lanord, system-ui, sans-serif;
   font-size: calc(28px + 5vw);
   font-weight: 700;
 }
-
 h1 {
   font-weight: 100;
 }
-
 .header > h1 {
   font-family: lanord;
 }
-
-/* =========================
-   HEADER
-   ========================= */
 .header {
   height: 50vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* =========================
-   SVG FILTER HOLDER
-   ========================= */
 #filters {
   position: absolute;
   width: 0;
   height: 0;
 }
-
-/* =========================
-   NAVBAR WRAPPER
-   ========================= */
 .navbar {
   z-index: 999;
   min-height: 5vh;
@@ -154,10 +120,6 @@ h1 {
   justify-content: center;
   pointer-events: none;
 }
-
-/* =========================
-   NAVBAR PILL
-   ========================= */
 .navbarInner {
   pointer-events: auto;
   width: 80%;
@@ -178,15 +140,10 @@ h1 {
   opacity: 1;
   gap: 15px;
 }
-
-/* =========================
-   SIDES
-   ========================= */
 .navSide {
   display: flex;
   gap: 1rem;
 }
-
 .navSide a {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
@@ -197,24 +154,15 @@ h1 {
     transform 0.3s ease,
     background 0.3s ease;
 }
-
 .navSide a:hover {
   transform: scale(1.08);
   background: rgba(255, 255, 255, 0.15);
 }
-
-/* =========================
-   CENTER TITLE
-   ========================= */
 .navCenter {
   font-family: lanord, system-ui, sans-serif;
   font-size: clamp(16px, 2vw, 22px);
   pointer-events: none;
 }
-
-/* =========================
-   HAMBURGER
-   ========================= */
 .hamburger {
   display: none;
   width: 26px;
@@ -226,7 +174,6 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .hamburger span {
   width: 100%;
   height: 2px;
@@ -236,7 +183,6 @@ h1 {
     transform 0.35s ease,
     opacity 0.35s ease;
 }
-
 .hamburger.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -246,54 +192,39 @@ h1 {
 .hamburger.open span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
-
-/* =========================
-   FULLSCREEN MOBILE MENU
-   ========================= */
 .navlinksMobile {
   position: fixed;
   inset: 0;
   z-index: 998;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 36px;
-
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px);
-
   transform: translateY(-100%);
   transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
 }
-
 .navlinksMobile.open {
   transform: translateY(0);
 }
-
 .navlinksMobile a {
   color: white;
   text-decoration: none;
   font-family: lanord, system-ui, sans-serif;
   font-size: 24px;
 }
-
-/* =========================
-   MOBILE
-   ========================= */
 @media only screen and (max-width: 600px) {
   .navbarInner {
     width: 92%;
     padding: 10px 14px;
     border-radius: 999px;
   }
-
   .navSide {
     display: none;
   }
-
   .hamburger {
     display: flex;
   }
