@@ -90,7 +90,7 @@ async function initIntro() {
           {
             y: "-3vh",
             scale: 1.3,
-            duration: 4,
+            duration: 2,
             ease: "expo.out",
             force3D: true,
             onComplete() {
@@ -110,7 +110,7 @@ async function initIntro() {
                   duration: 0.5,
                   stagger: 0.06,
                 },
-                "-=0.4",
+                "-=0.1",
               );
             },
           },
