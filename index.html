@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Template</title>
+    <link rel="stylesheet" href="/styles/shared.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+    <meta name="title" content="Template" />
+    <meta name="description" content="Template" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://Template-domain.vercel.app/" />
+    <meta property="og:title" content="Template" />
+    <meta property="og:description" content="Template" />
+    <!-- <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200"
+    /> -->
+
+    <meta name="theme-color" content="#ffff" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://Template-domain.vercel.app/"
+    />
+    <meta property="twitter:title" content="Template" />
+    <meta property="twitter:description" content="Template" />
+    <!-- <meta
+      property="twitter:image"
+      content="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200"
+    /> -->
+  </head>
+  <body>
+    <div class="navbar-modal">
+      <div class="navbar-modal-panel1">
+        <button class="navbar-buttons" onclick="closeMenu()">
+          <span class="material-symbols-rounded"> close </span>
+        </button>
+        <button onclick="goto('hero')" class="navbar-buttons">
+          <p>home</p>
+        </button>
+        <button onclick="goto('about')" class="navbar-buttons">
+          <p>about</p>
+        </button>
+        <button class="navbar-buttons">
+          <p>works</p>
+        </button>
+        <button class="navbar-buttons">
+          <p>contact</p>
+        </button>
+      </div>
+      <div class="navbar-modal-panel2">
+        <div class="marquee-vertical-container">
+          <div class="marquee-vertical-track">
+            <div class="marquee-vertical-content">
+              <span>AARAV SAINI</span>
+            </div>
+            <div class="marquee-vertical-content" aria-hidden="true">
+              <span>AARAV SAINI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar">
+      <h1 class="t" id="navbar-title">Aarav Saini</h1>
+      <div class="navbar-btn-container">
+        <button class="navbar-buttons" id="navbar-btn">
+          <span class="material-symbols-rounded">menu</span>
+        </button>
+      </div>
+    </div>
+    <div class="bg-hero" id="hero"></div>
+    <section id="about" class="sect about">
+      <h1>Hi, I'm Aarav.</h1>
+      <p id="about-text">
+        I build websites, web apps, and IOT integrations. I love robotics, and
+        I've made countless projects integrating them both.
+      </p>
+    </section>
+    <script src="/scripts/libs/gsap.min.js" defer></script>
+    <script src="/scripts/libs/SplitText.min.js" defer></script>
+    <script src="/scripts/libs/ScrollTrigger.min.js" defer></script>
+    <script src="/scripts/libs/lenis.min.js" defer></script>
+    <script src="/scripts/shared.js" defer></script>
+    <script src="/scripts/index.js" defer></script>
+  </body>
+</html>
